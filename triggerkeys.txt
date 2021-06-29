@@ -1,0 +1,21 @@
+Keys Available:
+  This text file contains a list of keys available for triggering DeBomber OCR
+  
+  shift
+  up
+  down
+  left
+  right
+  ctrl
+  alt
+  printscreen (alt: prntscrn)
+  insert
+  delete
+  home
+  end
+  pageup
+  pagedown
+  volumedown
+  volumemute
+  volumeup
+  
