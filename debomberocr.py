@@ -1,4 +1,5 @@
 import re
+from numpy import tri
 import pyautogui
 from PIL import Image
 from pytesseract import *
@@ -68,6 +69,10 @@ while True:
             if reqltr in a:
                 print(f"Word Accepted: {a}")
                 break
+            
+            if a == triggerkey:
+                continue
+
             if reqltr not in a:
                 print(f"Word Declined: {a}")
                 continue
