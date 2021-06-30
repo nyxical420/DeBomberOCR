@@ -12,7 +12,7 @@ clearlistkey = "end"
 sscoords     = 540, 390, 50, 30
 textfile     = "jklm_allwords.txt"
 typespeed    = 0.01
-ocrpath      = "C:\\Users\\xavee\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe"
+ocrpath      = "C:\\path\\Tesseract-OCR\\tesseract.exe"
 ocrconfig    = "-c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ --psm 8.5"
 ocrlang      = "eng"
 
