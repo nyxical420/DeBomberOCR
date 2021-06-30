@@ -4,3 +4,9 @@ An Optical Character Recognition (OCR) version of DeBomber for JKLM BombParty
 Script Requirements:
 
 [Tesseract OCR](https://github.com/UB-Mannheim/tesseract/wiki)
+
+[PyTesseract](https://pypi.org/project/pytesseract/)
+
+[PyAutoGUI](https://pypi.org/project/PyAutoGUI/)
+
+[Keyboard](https://pypi.org/project/keyboard/)
