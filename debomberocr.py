@@ -9,7 +9,7 @@ pyautogui.FAILSAFE = False
 
 # DeBomber OCR Settings
 triggerkey   = "delete"
-stopkey      = "escape"
+clrbonuskey  = "home"
 clearlistkey = "end"
 sscoords     = 540, 395, 47, 22
 textfile     = "jklm_allwords.txt"
@@ -20,7 +20,7 @@ ocrlang      = "eng"
 
 # Debomber OCR Settings Help
 # triggerkey   - You can choose any trigger key to trigger DeBomberOCR and type words for you, key names is on this link https://github.com/xacvwe/DeBomberOCR/blob/main/triggerkeys.txt
-# stopkey      - Stops DeBomberOCR. You can change this stop key if you want with the link above.
+# clrbonuskey  - Clears all of the bonus letters and replaces it with a new one with all letters available.
 # clearlistkey - Clears the usedwords list.
 # sscoords     - Screenshots the bomb's letter prompt and converts it into a word containing those letters. it should look something like this: https://github.com/xacvwe/DeBomberOCR/blob/main/letters.png
 # textfile     - Where the OCR grabbs words containing the letters from sscoords.
@@ -34,14 +34,17 @@ pytesseract.tesseract_cmd = ocrpath
 print("DeBomberOCR is now running.")
 usedwords = []
 bonus = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V"]
-
-
+wgeneration_limit = 25
 
 while True:
     a = keyboard.read_key()
     
-    if a == stopkey:
-        exit()
+    if a == clrbonuskey:
+        bonus.clear()
+        fillbonus = "ABCDEFGHIJKLMNOPQRSTUV"
+        for bonusfill in fillbonus:
+            bonus.append(bonusfill)
+        print("Cleared Bonus Letters.")
     
     if a == clearlistkey:
         usedwords.clear()
@@ -66,16 +69,19 @@ while True:
             except:
                 print("Cannot choose from an empty sequence (IndexError)")
 
-            if reqltr in a:
-                print(f"Word Accepted: {a}")
-                break
+            if wgeneration_limit != 0:
+                if reqltr in a:
+                    print(f"Word Accepted: {a}")
+                    break
+                
+                if reqltr not in a:
+                    print(f"Word Declined: {a}")
+                    wgeneration_limit -= 1
+                    continue
             
-            if a == triggerkey:
-                continue
-
-            if reqltr not in a:
-                print(f"Word Declined: {a}")
-                continue
+            if wgeneration_limit == 0:
+                wgeneration_limit += 25
+                break
 
         used = [w for w in usedwords if a in w]
 
@@ -95,8 +101,7 @@ while True:
                     print(f"Letter '{letter}' not in list")
             
             if bonus == []:
-                print("Gained +1 Life!")
                 fillbonus = "ABCDEFGHIJKLMNOPQRSTUV"
                 for bonusfill in fillbonus:
                     bonus.append(bonusfill)
-            print("Bonus Letters Left " + ', '.join(str(x) for x in bonus))
+            print("Bonus Letters Left: " + ','.join(str(x) for x in bonus))
