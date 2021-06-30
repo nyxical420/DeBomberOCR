@@ -1,5 +1,5 @@
 Keys Available:
-  This text file contains a list of keys available for triggering DeBomber OCR
+  This text file contains a list of keys available for triggering DeBomberOCR, clear usedwords list or stop DeBomberOCR
   
   shift
   up
