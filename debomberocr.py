@@ -99,4 +99,4 @@ while True:
                 fillbonus = "ABCDEFGHIJKLMNOPQRSTUV"
                 for bonusfill in fillbonus:
                     bonus.append(bonusfill)
-            print("Bonus Letters Left" + ''.join(str(x) for x in bonus))
+            print("Bonus Letters Left " + ', '.join(str(x) for x in bonus))
