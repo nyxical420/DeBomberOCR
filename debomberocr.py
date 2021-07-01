@@ -1,5 +1,3 @@
-import re
-from numpy import tri
 import pyautogui
 from PIL import Image
 from pytesseract import *
