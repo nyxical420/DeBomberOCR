@@ -7,8 +7,6 @@ Script Requirements:
 
 [Tesseract OCR](https://github.com/UB-Mannheim/tesseract/wiki)
 
-[Tesseract OCR .traineddata (OCR Languages)](https://github.com/tesseract-ocr/tessdata_fast)
-
 [PyTesseract](https://pypi.org/project/pytesseract/)
 
 [PyAutoGUI](https://pypi.org/project/PyAutoGUI/)
